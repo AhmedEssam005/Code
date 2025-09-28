@@ -321,9 +321,13 @@ section .trending {
     margin-top: 50px;
 }
 
-section .trending h1 a,section .trending .trending-games div a{
+section .trending h1 a, section .trending .trending-games div a, section .best-games .cards div a{
     text-decoration: none;
     color: white;
+    display: block;    
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
 }
 
 section .trending .trending-games{
@@ -333,15 +337,10 @@ section .trending .trending-games{
     gap: 20px;
     width: 80%;
 }
-section .trending .trending-games div a{
-    display: block;    
-    text-align: center;
-    transition: 0.3s;
-    position: relative;
-}
 
 
-section .trending .trending-games div a:first-child:after{
+
+section .trending .trending-games div a:first-child:after,section .best-games .cards div a:first-child:after{
     content: '57';
     position: absolute;
     width: 25px;
@@ -361,7 +360,7 @@ section .trending .trending-games div a:first-child:after{
 
 
 
-section .trending .trending-games div a img{
+section .trending .trending-games div a img , section .best-games .cards div img{
     width: 100%;    
     border-radius: 10px;
     transition: 0.3s;
@@ -370,16 +369,45 @@ section .trending .trending-games div a:not(:first-child){
     margin-top: 6px;
 }
 
-section .trending .trending-games div a:first-child :hover{
+section .trending .trending-games div a:first-child:hover,section .best-games .cards div a:first-child:hover{
     transform: rotate(1deg);
-
 }
 
-section .trending .trending-games div a:hover img{
+section .trending .trending-games div a:hover img , section .best-games .cards div a:hover img{
     transform: scale(1.05);
     filter:brightness(90%);
-
 }
+
+section .best-title{
+    text-align: center;
+    margin-top: 50px;
+}
+
+section .best-games{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+    margin: 10px auto;
+    gap: 50px;
+}
+
+
+section .best-games .best-year h2{
+    color: rgb(255, 123, 0);
+}
+
+section .best-games  .cards{
+    display: grid;
+    grid-template-columns: repeat(3,calc((90vw - 50px - 20px) /6));
+    gap: 10px;
+}
+
+
+section .best-games .best-alltime h2{
+    color: #818cf8;
+}
+
+
 
 
 section .pre-footer{
