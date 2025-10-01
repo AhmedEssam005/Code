@@ -195,13 +195,13 @@ section .profile-border .content p{
 section .text-center{
     margin: 40px auto;
     display: flex;
-    width: 600px;
     flex-direction: column;
     align-items: center;
+    width: 90%;
 }
 section .text-center h1{
     margin: 0;
-    font-size: 60px;
+    font-size: clamp(26px,4vw,54px);
 }
 
 section .text-center h1 .third{
@@ -219,8 +219,8 @@ section .text-center h1 .first{
 section .text-center p{
     color: #6a6f7a;
     text-align: center;
-    font-size: 18px;
     font-weight: 600;
+    font-size:clamp(12px,1vw,36px); 
 }
 
 section .text-center button{
@@ -277,9 +277,8 @@ section .pros .pros-cards .card div{
 .card:hover {
     transform: translateY(-5px);
 }
-
-section .import h1{
-margin: 0;
+.import h1{
+    margin: 0;
 }
 section .import{
     display: flex;
@@ -288,12 +287,16 @@ section .import{
     margin-top: 40px;
     gap: 20px;
 }
-
+section .import .stores{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 section .import .stores a{
     text-decoration: none;
     color: white;
     padding: 10px 50px;
-    margin: 0px 10px;
+    margin: 10px 10px;
     font-size: 18px;
     border-radius: 5px;
 }
@@ -379,6 +382,7 @@ section .trending .trending-games div a:hover img , section .best-games .cards d
 }
 
 section .best-title{
+
     text-align: center;
     margin-top: 50px;
 }
@@ -398,7 +402,7 @@ section .best-games .best-year h2{
 
 section .best-games  .cards{
     display: grid;
-    grid-template-columns: repeat(3,calc((90vw - 50px - 20px) /6));
+    grid-template-columns: repeat(3,calc((90vw - 20px - 50px)/6));
     gap: 10px;
 }
 
@@ -540,5 +544,30 @@ footer .copyright{
     .droplist ul li:hover a , .droplist i:hover{
         background-color: var(--hover-color);
     }
+
+}
+
+@media (max-width:800px){
+    section .best-games{
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 10px auto;
+    gap: 50px;
+}
+
+section .best-games  .cards{
+    display: grid;
+    grid-template-columns: repeat(2,calc((90vw - 20px)/2));
+    gap: 10px;
+}
+
+section .trending .trending-games{
+    display: grid;
+    grid-template-columns: repeat(2,calc((90vw - 20px)/2));
+    row-gap: 20px;
+    gap: 20px;
+    width: 90%;
+}
+
 
 }
